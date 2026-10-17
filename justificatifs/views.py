@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Justificatif
+from .serializer import JustificatifSerializer
 
-# Create your views here.
+class JustificatifViewSet(viewsets.ModelViewSet):
+    queryset = Justificatif.objects.all()
+    serializer_class = JustificatifSerializer
